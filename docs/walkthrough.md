@@ -1,7 +1,7 @@
 # Google Drive Sync Walkthrough
 
 ## Overview
-We have implemented a GitHub Action to automatically sync the latest `.llsp` files from a Google Drive folder to `robot_code/latest`.
+We have implemented a GitHub Action to automatically sync the latest `.llsp3` files from a Google Drive folder to `robot_code/latest`.
 
 ## Changes
 - **Scripts**: Created `scripts/sync_drive.py` to handle authentication and file downloading.
@@ -28,8 +28,8 @@ We have implemented a GitHub Action to automatically sync the latest `.llsp` fil
 2.  Select **Update from Google Drive**.
 3.  Click **Run workflow**.
 4.  Wait for the job to complete.
-5.  Check the `robot_code/latest` directory to see if the latest `.llsp` file has been added.
+5.  Check the `robot_code/latest` directory to see if the latest `.llsp3` file has been added.
 
 ## Troubleshooting
--   **"No .llsp files found"**: Ensure the folder ID is correct and the Service Account has access to the folder.
+-   **"No .llsp3 files found"**: Ensure the folder ID is correct and the Service Account has access to the folder.
 -   **Authentication Error**: Check if the JSON key is copied correctly into the secret.

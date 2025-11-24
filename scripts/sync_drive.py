@@ -32,7 +32,7 @@ def get_latest_llsp_file(service, folder_id):
     query = (
         f"'{folder_id}' in parents and "
         "mimeType != 'application/vnd.google-apps.folder' and "
-        "name contains '.llsp' and "
+        "name contains '.llsp3' and "
         "trashed = false"
     )
     
@@ -46,7 +46,7 @@ def get_latest_llsp_file(service, folder_id):
     
     files = results.get('files', [])
     if not files:
-        print("No .llsp files found.")
+        print("No .llsp3 files found.")
         return None
     
     return files[0]
@@ -73,7 +73,7 @@ def clean_target_directory(target_dir):
         return
 
     for item in os.listdir(target_dir):
-        if item.endswith(".llsp"):
+        if item.endswith(".llsp3"):
             os.remove(os.path.join(target_dir, item))
             print(f"Removed old file: {item}")
 
@@ -86,7 +86,7 @@ def main():
     creds = authenticate()
     service = build('drive', 'v3', credentials=creds)
     
-    print(f"Checking for latest .llsp file in folder {folder_id}...")
+    print(f"Checking for latest .llsp3 file in folder {folder_id}...")
     latest_file = get_latest_llsp_file(service, folder_id)
     
     if latest_file:
